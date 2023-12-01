@@ -42,60 +42,60 @@ describe('Visit Cinnamon services website', () => {
 
 // Query for the Projects Navigation link 
 
-describe('Find Cinnamon Projects link', () => {
-  it('finds the Cinnamon "Projects" link', () => {
+describe('Click Cinnamon Projects link', () => {
+  it('clicks the Cinnamon "Projects" link', () => {
     cy.visit('https://cinnamon.services/')
 
-    cy.contains('Projects')
+    cy.contains('Projects').click({force: true})
   })
 })
 
 // Query for the Services Navigation link 
 
-describe('Find Cinnamon Services link', () => {
-  it('finds the Cinnamon "Services" link', () => {
+describe('Click Cinnamon Services link', () => {
+  it('clicks the Cinnamon "Services" link', () => {
     cy.visit('https://cinnamon.services/')
 
-    cy.contains('Services')
+    cy.contains('Services').click({force: true})
   })
 })
 
 // Query for the About Us Navigation link 
 
-describe('Find Cinnamon About Us link', () => {
-  it('finds the Cinnamon "About Us" link', () => {
+describe('Click Cinnamon About Us link', () => {
+  it('clicks the Cinnamon "About Us" link', () => {
     cy.visit('https://cinnamon.services/')
 
-    cy.contains('About Us')
+    cy.contains('About Us').click({force: true})
   })
 })
 
 // Query for the Careers Navigation link 
 
-describe('Find Cinnamon Careers link', () => {
-  it('finds the Cinnamon "Careers" link', () => {
+describe('Click Cinnamon Careers link', () => {
+  it('clicks the Cinnamon "Careers" link', () => {
     cy.visit('https://cinnamon.services/')
 
-    cy.contains('Careers')
+    cy.contains('Careers').click({force: true})
   })
 })
 
 // Query for the Blog Navigation link 
 
-describe('Find Cinnamon Blog link', () => {
-  it('finds the Cinnamon "Blog" link', () => {
+describe('Click Cinnamon Blog link', () => {
+  it('clicks the Cinnamon "Blog" link', () => {
     cy.visit('https://cinnamon.services/')
 
-    cy.contains('Blog')
+    cy.contains('Blog').click({force: true})
   })
 })
 
 // Query for the Contact Us Navigation link 
 
-describe('Find Cinnamon Contact Us link', () => {
-  it('finds the Cinnamon "Contact Us" link', () => {
+describe('Click Cinnamon Contact Us link', () => {
+  it('clicks the Cinnamon "Contact Us" link', () => {
     cy.visit('https://cinnamon.services/')
 
-    cy.contains('Contact Us')
+    cy.contains('Contact Us').click({force: true})
   })
 })
