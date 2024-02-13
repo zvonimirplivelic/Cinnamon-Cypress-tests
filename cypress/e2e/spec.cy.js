@@ -42,6 +42,14 @@ describe('Visit Cinnamon services website', () => {
 
 // Query for the Projects Navigation link 
 
+describe('Find Cinnamon Projects link', () => {
+  it('finds Cinnamon Projects navigation link"', () => {
+    cy.visit('https://cinnamon.services')
+
+    cy.contains('Projects')
+  })
+})
+
 describe('Click Cinnamon Projects link', () => {
   it('clicks the Cinnamon "Projects" link', () => {
     cy.visit('https://cinnamon.services/')
@@ -51,6 +59,14 @@ describe('Click Cinnamon Projects link', () => {
 })
 
 // Query for the Services Navigation link 
+
+describe('Find Cinnamon Services link', () => {
+  it('finds Cinnamon Services navigation link"', () => {
+    cy.visit('https://cinnamon.services')
+
+    cy.contains('Services')
+  })
+})
 
 describe('Click Cinnamon Services link', () => {
   it('clicks the Cinnamon "Services" link', () => {
@@ -62,6 +78,14 @@ describe('Click Cinnamon Services link', () => {
 
 // Query for the About Us Navigation link 
 
+describe('Find Cinnamon About Us link', () => {
+  it('finds Cinnamon About Us navigation link"', () => {
+    cy.visit('https://cinnamon.services')
+
+    cy.contains('About Us')
+  })
+})
+
 describe('Click Cinnamon About Us link', () => {
   it('clicks the Cinnamon "About Us" link', () => {
     cy.visit('https://cinnamon.services/')
@@ -71,6 +95,14 @@ describe('Click Cinnamon About Us link', () => {
 })
 
 // Query for the Careers Navigation link 
+
+describe('Find Cinnamon Careers link', () => {
+  it('finds Cinnamon Projects navigation link"', () => {
+    cy.visit('https://cinnamon.services')
+
+    cy.contains('Careers')
+  })
+})
 
 describe('Click Cinnamon Careers link', () => {
   it('clicks the Cinnamon "Careers" link', () => {
@@ -82,6 +114,14 @@ describe('Click Cinnamon Careers link', () => {
 
 // Query for the Blog Navigation link 
 
+describe('Find Cinnamon Blog link', () => {
+  it('finds Cinnamon Blog navigation link"', () => {
+    cy.visit('https://cinnamon.services')
+
+    cy.contains('Blog')
+  })
+})
+
 describe('Click Cinnamon Blog link', () => {
   it('clicks the Cinnamon "Blog" link', () => {
     cy.visit('https://cinnamon.services/')
@@ -92,6 +132,14 @@ describe('Click Cinnamon Blog link', () => {
 
 // Query for the Contact Us Navigation link 
 
+describe('Find Cinnamon Contact Us link', () => {
+  it('finds Cinnamon Contact Us navigation link"', () => {
+    cy.visit('https://cinnamon.services')
+
+    cy.contains('Contact Us')
+  })
+})
+
 describe('Click Cinnamon Contact Us link', () => {
   it('clicks the Cinnamon "Contact Us" link', () => {
     cy.visit('https://cinnamon.services/')
@@ -99,3 +147,35 @@ describe('Click Cinnamon Contact Us link', () => {
     cy.contains('Contact Us').click({force: true})
   })
 })
+
+// Enter Subscription e-mail via clicking the Subscribe button (getting by Subscribe text on button)
+
+describe('Subscribe to newsletter', () => {
+  it('finds subscribe form, fills the email credentials and clicks subscribe button successfully', () => {
+    cy.visit('https://cinnamon.services/')
+
+    // Get an input, type into it
+    cy.get('[name="email"]').type('fake@email.com')
+
+    //  Verify that the value has been updated
+    cy.get('[name="email"]').should('have.value', 'fake@email.com')
+
+    cy.contains('Subscribe').click()
+  })
+})
+
+// Does the same but submits the form (getting by form id)
+
+describe('Subscribe to newsletter', () => {
+  it('finds subscribe form, fills the email credentials and submits the form successfully', () => {
+    cy.visit('https://cinnamon.services/')
+
+    cy.get('[name="email"]').type('fake@email.com')
+
+    cy.get('[name="email"]').should('have.value', 'fake@email.com')
+
+    cy.get('#subscribeForm').submit()
+  })
+})
+
+
