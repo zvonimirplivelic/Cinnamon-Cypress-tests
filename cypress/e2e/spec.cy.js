@@ -55,6 +55,7 @@ describe('Click Cinnamon Projects link', () => {
     cy.visit('https://cinnamon.services/')
 
     cy.get('.e62olcv2').contains("Projects").click({force: true} )
+    cy.url().should('include', '/projects')
   })
 })
 
@@ -71,8 +72,10 @@ describe('Find Cinnamon Services link', () => {
 describe('Click Cinnamon Services link', () => {
   it('clicks the Cinnamon "Services" link', () => {
     cy.visit('https://cinnamon.services/')
+    
 
     cy.get('.e62olcv2').contains("Services").click({force: true} )
+    cy.url().should('include', '/services')
   })
 })
 
@@ -91,6 +94,8 @@ describe('Click Cinnamon About Us link', () => {
     cy.visit('https://cinnamon.services/')
 
     cy.get('.e62olcv2').contains("About Us").click({force: true} )
+    cy.url().should('include', '/about')
+
   })
 })
 
@@ -109,6 +114,8 @@ describe('Click Cinnamon Careers link', () => {
     cy.visit('https://cinnamon.services/')
 
     cy.get('.e62olcv2').contains("Careers").click({force: true} )
+    cy.url().should('include', '/careers')
+
   })
 })
 
@@ -127,6 +134,8 @@ describe('Click Cinnamon Blog link', () => {
     cy.visit('https://cinnamon.services/')
 
     cy.get('.e62olcv2').contains("Blog").click({force: true} )
+    cy.url().should('include', '/blog')
+
   })
 })
 
@@ -145,6 +154,8 @@ describe('Click Cinnamon Contact Us link', () => {
     cy.visit('https://cinnamon.services/')
 
     cy.get('.e12xm54s5').contains("Contact Us").click({force: true} )
+    cy.url().should('include', '/contact')
+
   })
 })
 
