@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('getFixedNavElement', (navElementText) => { 
+    return cy.get(`.e62olcv2`).contains(navElementText)
+ })
+
+ Cypress.Commands.add('getBottomNavElement', (navElementText) => { 
+    return cy.get(`.e62olcv0`).contains(navElementText)
+ })
