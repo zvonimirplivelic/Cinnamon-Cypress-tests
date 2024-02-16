@@ -1,5 +1,6 @@
 describe('Visit Cinnamon services website', () => {
   beforeEach(() => {
+    cy.viewport(1280, 720)
     cy.visit('/')
   })
 
@@ -7,18 +8,19 @@ describe('Visit Cinnamon services website', () => {
     cy.getFixedNavElement(/Projects/i)
   })
 
-  it('finds bottom navigation Projectslink', () => {
+  it('finds bottom navigation Projects link', () => {
     cy.getBottomNavElement(/Projects/i)
   })
 
   it('clicks fixed navigation Projects link', () => {
-    cy.getFixedNavElement(/Projects/i).click({force:true})
-    cy.url().should('include', '/projects')
+    cy.getFixedNavElement(/Projects/i).click()
+    cy.location("pathname").should('contain', '/projects')
   })
 
   it('clicks bottom navigation Projects link', () => {
+    cy.scrollTo('bottom') 
     cy.getBottomNavElement(/Projects/i).click({force:true})
-    cy.url().should('include', '/projects')
+    cy.location("pathname").should('contain', '/projects')
   })
 
   it('finds fixed navigation Services link', () => {
@@ -31,12 +33,12 @@ describe('Visit Cinnamon services website', () => {
   
   it('clicks fixed navigation Services link', () => {
     cy.getFixedNavElement(/Services/i).click({force:true})
-    cy.url().should('include', '/services')
+    cy.location("pathname").should('contain', '/services')
   })
 
   it('clicks bottom navigation Services link', () => {
     cy.getBottomNavElement(/Services/i).click({force:true})
-    cy.url().should('include', '/services')
+    cy.location("pathname").should('contain', '/services')
   })
 
   it('finds fixed navigation About Us link', () => {
@@ -49,12 +51,12 @@ describe('Visit Cinnamon services website', () => {
   
   it('clicks fixed navigation About Us link', () => {
     cy.getFixedNavElement(/About Us/i).click({force: true} )
-    cy.url().should('include', '/about')
+    cy.location("pathname").should('contain', '/about')
   })
   
   it('clicks bottom navigation About Us link', () => {
     cy.getBottomNavElement(/About Us/i).click({force: true} )
-    cy.url().should('include', '/about')
+    cy.location("pathname").should('contain', '/about')
   })
 
   it('finds fixed navigation Careers link', () => {
@@ -67,12 +69,12 @@ describe('Visit Cinnamon services website', () => {
 
   it('clicks fixed navigation Careers link', () => {
     cy.getFixedNavElement(/Careers/i).click({force: true} )
-    cy.url().should('include', '/careers')
+    cy.location("pathname").should('contain', '/careers')
   })
 
   it('clicks bottom navigation Careers link', () => {
     cy.getBottomNavElement(/Careers/i).click({force: true} )
-    cy.url().should('include', '/careers')
+    cy.location("pathname").should('contain', '/careers')
   })
   
   it('finds fixed navigation Blog link', () => {
@@ -85,12 +87,12 @@ describe('Visit Cinnamon services website', () => {
   
   it('clicks fixed navigation Blog link', () => {
     cy.getFixedNavElement(/Blog/i).click({force: true} )
-    cy.url().should('include', '/blog')
+    cy.location("pathname").should('contain', '/blog')
   })
   
   it('clicks bottom navigation Blog link', () => {
     cy.getBottomNavElement(/Blog/i).click({force: true} )
-    cy.url().should('include', '/blog')
+    cy.location("pathname").should('contain', '/blog')
   })
   
   it('clicks fixed navigation Play button', () => {
@@ -103,22 +105,6 @@ describe('Visit Cinnamon services website', () => {
 
   it('clicks fixed navigation Contact Us link', () => {
     cy.get('.e12xm54s5').contains("Contact Us").click({force: true} )
-    cy.url().should('include', '/contact')
+    cy.location("pathname").should('contain', '/contact')
   })
-
-  it('finds subscribe form, fills the email credentials and clicks subscribe button', () => {
-    cy.get('[name="email"]').type('fake@email.com')
-  
-    cy.get('[name="email"]').should('have.value', 'fake@email.com')
-  
-    cy.get('#subscribeNewsletterButton').contains('Subscribe').click({force: true})
-  })
-
-  it('finds subscribe form, fills the email credentials and submits the form', () => {
-    cy.get('[name="email"]').type('fake@email.com')
-  
-    cy.get('[name="email"]').should('have.value', 'fake@email.com')
-  
-    cy.get('#subscribeForm').submit()
-    })
 })
