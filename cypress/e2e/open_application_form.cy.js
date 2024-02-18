@@ -23,18 +23,25 @@ describe('Testing Open application form on Cinnamon website', () => {
         cy.get('select').first().within(() => {
             cy.contains('Github')
         }).select('github').should('have.value', 'github')
+        cy.get('select').eq(0).contains('Github')
 
         cy.get('select').eq(1).within(() => {
             cy.contains('Cinnamon website')
         }).select('cinnamonwebsite').should('have.value', 'cinnamonwebsite')
+        cy.get('select').last().contains('Cinnamon website')
 
         cy.get('input[type=file]').first().selectFile('cypress/fixtures/test.pdf', {force: true})
+        cy.get('.e1eaey1u3').first().within(() => {
+            cy.get('button').should('be.visible')
+        })
 
         cy.get('.e1wnkp8s3').first().click({force: true})
+        cy.get('.e1wnkp8s1').first().should('be.visible')
 
         cy.get('.e1wnkp8s3').last().click({force: true})
+        cy.get('.e1wnkp8s1').last().should('be.visible')
 
         cy.get('#formApplyButton').contains('Apply').click({force: true})
-
+        cy.location("pathname").should('contain', '/thank-you/openApplication')
     })
 })
