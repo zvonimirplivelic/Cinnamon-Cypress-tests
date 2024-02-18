@@ -1,15 +1,11 @@
-describe('Testing Subscription form', () => {
+describe('Testing Subscription form on Cinnamon website', () => {
     beforeEach(() => {
+        cy.viewport(1280, 720)
         cy.visit('/')
-    })
-
-    it('test subscribe form', () => {
-      //  cy.contains()
     })
 
     it('fills the email credentials and clicks subscribe button', () => {
         cy.get('.e1lph2lf3').type('fake@email.com')
-    
         cy.get('.e1lph2lf3').should('have.value', 'fake@email.com')
         cy.get('#subscribeNewsletterButton').contains('Subscribe').click({force: true})
     })

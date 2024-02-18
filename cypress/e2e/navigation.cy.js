@@ -1,4 +1,4 @@
-describe('Visit Cinnamon services website', () => {
+describe('Test navigation on Cinnamon website', () => {
   beforeEach(() => {
     cy.viewport(1280, 720)
     cy.visit('/')
